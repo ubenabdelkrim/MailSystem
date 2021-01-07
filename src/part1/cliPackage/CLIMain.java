@@ -4,16 +4,10 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import org.apache.commons.cli.*;
 import part1.mailServiceElements.Message;
 import part1.mailServiceElements.User;
 import part1.mailServicePack.MailService;
-
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
 
 import javax.crypto.NoSuchPaddingException;
 
@@ -21,13 +15,14 @@ import javax.crypto.NoSuchPaddingException;
 public class CLIMain {
     public static void main(String[] args) {
         CLI cli=new CLI(new MailService());
+        cli.getMailService().createMailStore();
         try {
             cli.getMailService().deSerialize();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        CommandLineParser parser = new DefaultParser();
+        CommandLineParser parser = new GnuParser();
         Options options = createOptions();
 
         String[] firstOption;

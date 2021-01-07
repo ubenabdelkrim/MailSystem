@@ -127,7 +127,7 @@ public class MailService implements Serializable, MailServiceInterface{
 	 * @return nMessages
 	 */
 	public int getNMessages(){
-		return getMessagesList().size();
+		return getMessagesList().size()/mailBoxList.size();
 	}
 	/**
 	 * Method to return the average of messages per user
@@ -203,11 +203,6 @@ public class MailService implements Serializable, MailServiceInterface{
 	public MailBoxInterface logIn(String username){
 		if(getAnnotation().log()){
 			MailBoxInterface mailBox=searchMailBoxUser(username);
-			try {
-				mailBox.updateMailStore(username);
-			} catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
-				e.printStackTrace();
-			}
 			return mailBox;
 		}
 		return null;

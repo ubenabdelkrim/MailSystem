@@ -95,16 +95,6 @@ public class CLI implements CLInterface{
         return mailBox;
     }
     /**
-     * Method to update the mailbox
-     */
-    public void updateMail(){
-        try {
-            mailBox.updateMailStore(mailBox.getUser().getUsername());
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
-            e.printStackTrace();
-        }
-    }
-    /**
      * Method to filter By Date
      * @param date to filter
      * @return filtered list
@@ -115,8 +105,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerDate(date);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerDate(date);
     }
     /**
      * Method to filter By Name
@@ -129,8 +118,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerSenderName(name);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerSenderName(name);
     }
     /**
      * Method to filter By Username
@@ -143,8 +131,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerSender(username);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerSender(username);
     }
     /**
      * Method to filter By Word
@@ -157,8 +144,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerWord(word);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerWord(word);
     }
     /**
      * Method to filter messages with less than n words indicated with the parameter
@@ -171,8 +157,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerLessThanNWords(nWord);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerLessThanNWords(nWord);
     }
     /**
      * Method to filter messages by word and n words
@@ -194,8 +179,7 @@ public class CLI implements CLInterface{
         } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
-        mailBox.getMailstore().filterPerSubject(subject);
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().filterPerSubject(subject);
     }
     /**
      * Method to sort messages by date
@@ -210,15 +194,13 @@ public class CLI implements CLInterface{
      * @return sorted list messages
      */
     public List<Message> sortPerSender(){
-        mailBox.getMailstore().sortPerSender();
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().sortPerSender();
     }
     /**
      * Method to sort messages by receiver
      * @return sorted list messages
      */
     public List<Message> sortPerReceiver(){
-        mailBox.getMailstore().sortPerReceiver();
-        return mailBox.getMailstore().getMessagesList();
+        return mailBox.getMailstore().sortPerReceiver();
     }
 }
