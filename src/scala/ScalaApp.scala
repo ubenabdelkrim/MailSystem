@@ -18,7 +18,7 @@ import scala.MailSys.mailSystem
     val root = new Domain("")
     val cat = new Domain("cat")
     val urv = new Domain("urv")
-    val etse = new Domain("etse")
+    val etse = new Domain("etse ")
     val estudiants = new Domain("estudiants")
     val user1 = new Account("user1")
     val user2 = new Account("user2")
