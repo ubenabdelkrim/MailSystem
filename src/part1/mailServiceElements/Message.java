@@ -1,6 +1,5 @@
 package part1.mailServiceElements;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -15,7 +14,6 @@ public class Message implements Serializable{
     /**
      * Serializable class to write and read the obejct from file
      */
-    @Serial
     private static final long serialVersionUID = 1L;
 
     private String subject;

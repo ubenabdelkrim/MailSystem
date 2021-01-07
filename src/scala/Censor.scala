@@ -37,7 +37,7 @@ object Censor {
      * @return finalList
      */
     @tailrec
-  def tail_censor_aux(wordsToCens: List[String])(messages: List[Message])(finalList:List[Message]):  List[Message] = messages match {
+    def tail_censor_aux(wordsToCens: List[String])(messages: List[Message])(finalList:List[Message]):  List[Message] = messages match {
       case Nil => finalList
       case msg::msgList=>
         tail_censor_aux(wordsToCens)(msgList)(splitMessage(wordsToCens, msg)::finalList)

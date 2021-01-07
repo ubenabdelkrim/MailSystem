@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 
+/**
+ * DateComaprator implements Comparator<Message>
+ * @author Usama Benabdelkrim Zakan
+ */
 public class DateComparator implements Comparator<Message>{
 
     @Override

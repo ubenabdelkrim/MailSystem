@@ -87,22 +87,22 @@ class FoldFilterVisitor[A](accumulator:A, op: (A,Message)=>A, p: Account => Bool
   override def visit(account: Account): Unit = {
     if (p(account)) {
       val mail=account.getMail
-        if(mail!=null){
-          mail.groupBy(_.getSender.getUsername)
-            .foreach(elem=>{
-              users.get(elem._1) match {
-                case Some(value) => users.put(elem._1, elem._2.foldLeft(value)(op))   //if exists introduce new value to string key
-                case None => users.put(elem._1, elem._2.foldLeft(accumulator)(op))    //if not exists introduce new key to the map with new value
-              }
-            })
-          }
+      if(mail!=null){
+        mail.groupBy(_.getSender.getUsername)
+          .foreach(elem=>{
+            users.get(elem._1) match {
+              case Some(value) => users.put(elem._1, elem._2.foldLeft(value)(op))   //if exists introduce new value to string key
+              case None => users.put(elem._1, elem._2.foldLeft(accumulator)(op))    //if not exists introduce new key to the map with new value
+            }
+          })
       }
     }
+  }
 
   override def visit(domain: Domain): Unit = {
     //Do nothing, visit only the children from the invoked AComponent
   }
-  
+
 }
 
 /**

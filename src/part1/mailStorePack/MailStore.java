@@ -170,6 +170,10 @@ public abstract class MailStore implements Serializable, MailStoreInterface {
 		}
 	}
 
+	/**
+	 * Get Number of Words in mailstore
+	 * @return result
+	 */
 	public int getNumberWords(){
 		int count=0;
 		for(Message m : messagesList){
@@ -178,6 +182,10 @@ public abstract class MailStore implements Serializable, MailStoreInterface {
 		return count;
 	}
 
+	/**
+	 * ToString method
+	 * @return string
+	 */
 	public String toString(){
 		StringBuilder toString = new StringBuilder();
 		for(Message m : messagesList){

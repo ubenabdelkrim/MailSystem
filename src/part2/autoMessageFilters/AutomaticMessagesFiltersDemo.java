@@ -12,7 +12,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * AutomaticMessagesFilterDemo to test AutomaticMessageFilter
+ * @author Usama Benabdelkrim Zakan
+ */
 public class AutomaticMessagesFiltersDemo {
+    /**
+     * Main Method
+     * @param args args
+     * @throws NoSuchPaddingException NoSuchPaddingException
+     * @throws NoSuchAlgorithmException NoSuchAlgorithmException
+     */
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException {
         //Initialize mail system
         MailService mailService=new MailService();
@@ -54,6 +64,11 @@ public class AutomaticMessagesFiltersDemo {
         System.out.print(userList);
     }
 
+    /**
+     * Get users with messages in spamlist
+     * @param mailBoxP2
+     * @return
+     */
     public static List<User> getSpamListSenders(MailBoxInterface mailBoxP2){
         return mailBoxP2.getSpamList().stream().map(Message::getSender).collect(Collectors.toList());
     }

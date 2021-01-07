@@ -2,6 +2,10 @@ package part1.mailServiceElements;
 
 import java.util.Comparator;
 
+/**
+ * SenderComparator implements Comparator<Message>
+ * @author Usama Benabdelkrim Zakan
+ */
 public class SenderComparator implements Comparator<Message>{
 
     @Override

@@ -75,7 +75,7 @@ class Domain(val n:String) extends AComponent {
     getMailAux(list)
   }
 
-   def getMailAux(list: List[Message]): List[Message] = {
+  def getMailAux(list: List[Message]): List[Message] = {
     if(name.equals("")){
       MailSys.mailSystem.getMessagesList.asScala.toList
     }

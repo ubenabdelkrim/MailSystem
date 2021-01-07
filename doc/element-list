@@ -1,0 +1,8 @@
+part1.cliPackage
+part1.mailServiceElements
+part1.mailServicePack
+part1.mailStorePack
+part2.autoMessageFilters
+part2.encodingMessages
+part3.redisMailStore
+part4

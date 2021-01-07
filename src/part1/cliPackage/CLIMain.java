@@ -11,7 +11,10 @@ import part1.mailServicePack.MailService;
 
 import javax.crypto.NoSuchPaddingException;
 
-
+/**
+ * CLIMain to Test the CLI
+ * @author Usama Benabdelkrim Zakan
+ */
 public class CLIMain {
     public static void main(String[] args) {
         CLI cli=new CLI(new MailService());

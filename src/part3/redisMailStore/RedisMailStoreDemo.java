@@ -11,8 +11,19 @@ import part2.autoMessageFilters.MailBoxWithSpam;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
+/**
+ * RedisMailStoreDemo to test RedisMailStore
+ * @author Usama Benabdelkrim Zakan
+ */
 public class RedisMailStoreDemo {
     static Scanner sr=new Scanner(System.in);
+
+    /**
+     * Main method
+     * @param args args
+     * @throws NoSuchPaddingException NoSuchPaddingException
+     * @throws NoSuchAlgorithmException NoSuchAlgorithmException
+     */
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException{
         RedisMailStoreAdapter mailStore=RedisMailStoreAdapter.getInstance();
         mailStore.setMailStore(new MailStoreInMemory());

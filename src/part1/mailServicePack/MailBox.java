@@ -98,6 +98,10 @@ public class MailBox implements Serializable, MailBoxInterface {
 		return messagesList;
 	}
 
+	/**
+	 * Spam List not implemented here
+	 * @return spamList
+	 */
 	@Override
 	public List<Message> getSpamList() {
 		return null;

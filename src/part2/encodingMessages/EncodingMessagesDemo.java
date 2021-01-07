@@ -8,7 +8,17 @@ import part1.mailStorePack.MailStoreOnFile;
 import part2.autoMessageFilters.MailBoxWithSpam;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * EncodingMessagesDemo to test ReversesStringDecorator and EncryptionDecorator
+ * @author Usama Benabdelkrim Zakan
+ */
 public class EncodingMessagesDemo {
+    /**
+     * Main method
+     * @param args args
+     * @throws NoSuchPaddingException NoSuchPaddingException
+     * @throws NoSuchAlgorithmException NoSuchAlgorithmException
+     */
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException {
         //Initialize mail system
         MailService mailService=new MailService();

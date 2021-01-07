@@ -11,11 +11,11 @@ import scala.MailSys.mailSystem
  * MailSys object
  */
 object MailSys {
-    val mailStore = new MailStoreInMemory()
-    val mailSystem = new MailService(mailStore)
-  }
+  val mailStore = new MailStoreInMemory()
+  val mailSystem = new MailService(mailStore)
+}
 
-  object ScalaApp{
+object ScalaApp{
   def main(args: Array[String]) {
     //1. Composite structure
     val root = new Domain("")

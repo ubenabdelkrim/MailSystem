@@ -6,6 +6,10 @@ import part2.encodingMessages.MailStoreInterface;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * RedisMailStoreAdapter to adapt RedisMailStore to MailStoreInterface
+ * @author Usama Benabdelkrim Zakan
+ */
 public class RedisMailStoreAdapter implements MailStoreInterface {
 
     static JedisClient jedisClient;

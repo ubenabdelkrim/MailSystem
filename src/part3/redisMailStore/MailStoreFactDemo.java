@@ -9,6 +9,10 @@ import part2.autoMessageFilters.MailBoxWithSpam;
 import part2.encodingMessages.EncryptionDecorator;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * MailStoreFactDemo to test MaiStoreFactory
+ * @author Usama Benabdelkrim Zakan
+ */
 public class MailStoreFactDemo {
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException {
         MailServiceFactory mailService;

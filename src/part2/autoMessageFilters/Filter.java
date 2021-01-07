@@ -8,5 +8,10 @@ import java.util.List;
  * @author Usama Benabdelkrim Zakan
  */
 public interface Filter {
+	/**
+	 * Update method
+	 * @param messagesList messages to update
+	 * @return updated list
+	 */
 	List<Message> update(List<Message> messagesList);
 }

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"part1.cliPackage"},{"l":"part1.mailServiceElements"},{"l":"part1.mailServicePack"},{"l":"part1.mailStorePack"},{"l":"part2.autoMessageFilters"},{"l":"part2.encodingMessages"},{"l":"part3.redisMailStore"},{"l":"part4"}];updateSearchResults();
