@@ -11,14 +11,23 @@ import java.util.Scanner;
 
 /**
  * This class contains the main method to test the MailService
+ *
  * @author Usama Benabdelkrim Zakan
-*/ 
+ */
 public class MailServiceDemo {
+	/**
+	 * The Sr.
+	 */
 	static Scanner sr=new Scanner(System.in);
+
 	/**
 	 * Main method with multiple menu and options
+	 *
 	 * @param args args
-	*/ 
+	 * @throws IOException              the io exception
+	 * @throws NoSuchPaddingException   the no such padding exception
+	 * @throws NoSuchAlgorithmException the no such algorithm exception
+	 */
 	public static void main(String[] args) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException {
 		//Initialize mail system
 		MailServiceInterface mailService=DynamicProxy.newInstance(new MailService());
