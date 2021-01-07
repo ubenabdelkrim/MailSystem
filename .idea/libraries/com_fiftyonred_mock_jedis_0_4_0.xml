@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.fiftyonred:mock-jedis:0.4.0" type="repository">
+    <properties maven-id="com.fiftyonred:mock-jedis:0.4.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fiftyonred/mock-jedis/0.4.0/mock-jedis-0.4.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.6.0/jedis-2.6.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.0/commons-pool2-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
