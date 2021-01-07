@@ -21,10 +21,6 @@ public class MailServiceFactory extends MailService implements MailServiceInterf
         this.mailStoreFactory=mailStoreFactory;
     }
 
-    public MailServiceFactory() {
-
-    }
-
     /**
      * Method to create MailStore
      * Initialize Mail Box list.

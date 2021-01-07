@@ -82,7 +82,7 @@ object MailSys {
     println("Censored Messages (Stack): "+censorVisitor.messagesList)
 
     //8-9. TransformerVisitor with tail censor
-    censorStack=Censor.tail_censor(List("spam", "you")) _
+    censorStack=Censor.tail_censor(List("spam", "you"))
     censorVisitor=new TransformerVisitor(censorStack)
     root.accept(censorVisitor)
     println("Censored Messages(Tail): "+censorVisitor.messagesList)

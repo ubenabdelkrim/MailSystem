@@ -13,7 +13,7 @@ trait AComponent {
 
   var domains: Int = 0
 
-  def getMail(): List[Message]
+  def getMail: List[Message]
 
   def printTree(): Unit
 
@@ -29,12 +29,12 @@ class Account(val n:String) extends AComponent {
     println("|@"+name)
   }
 
-  override def getMail(): List[Message] = {
-    var mBox=MailSys.mailSystem.searchMailBoxUser(name)
+  override def getMail: List[Message] = {
+    val mBox = MailSys.mailSystem.searchMailBoxUser(name)
     if(mBox!=null){
       return mBox.getMailstore.getMessagesList.asScala.toList
     }
-    return null
+    null
   }
 
   override def accept(visitor: Visitor): Unit = {
@@ -48,6 +48,7 @@ class Account(val n:String) extends AComponent {
 
 class Domain(val n:String) extends AComponent {
   var children: ListBuffer[AComponent] = new ListBuffer[AComponent]()
+  var tree:String=""
 
   def addChild(child: AComponent): Unit = {
     children += child
@@ -69,30 +70,30 @@ class Domain(val n:String) extends AComponent {
     }
   }
 
-  override def getMail(): List[Message] = {
-    var list:List[Message]=List()
-    return getMailAux(list)
+  override def getMail: List[Message] = {
+    val list: List[Message] = List()
+    getMailAux(list)
   }
 
    def getMailAux(list: List[Message]): List[Message] = {
     if(name.equals("")){
-      return MailSys.mailSystem.getMessagesList.asScala.toList
+      MailSys.mailSystem.getMessagesList.asScala.toList
     }
     else{
       for(x <- children){
-        if(x.isInstanceOf[Domain]){
-          x.asInstanceOf[Domain].getMailAux(list)
-        }
-        else{
-          if(x.isInstanceOf[Account]){
-            var l=mailSystem.searchMailBoxUser(x.name)
-            if(l!=null){
-              list ::: l.getMailstore.getMessagesList.asScala.toList
+        x match {
+          case domain: Domain =>
+            domain.getMailAux(list)
+          case _ =>
+            if (x.isInstanceOf[Account]) {
+              val l = mailSystem.searchMailBoxUser(x.name)
+              if (l != null) {
+                list ::: l.getMailstore.getMessagesList.asScala.toList
+              }
             }
-          }
         }
       }
-      return list
+      list
     }
   }
 

@@ -2,13 +2,11 @@ package part1.mailServicePack;
 
 import part4.MailStoreAnnotation;
 
-import javax.crypto.NoSuchPaddingException;
 import java.io.*;
 import part1.mailServiceElements.Message;
 import part1.mailServiceElements.User;
 import part2.encodingMessages.MailStoreInterface;
 import part3.redisMailStore.MailStoreFactory;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -127,7 +125,7 @@ public class MailService implements Serializable, MailServiceInterface{
 	 * @return nMessages
 	 */
 	public int getNMessages(){
-		return getMessagesList().size()/mailBoxList.size();
+		return getMessagesList().size();
 	}
 	/**
 	 * Method to return the average of messages per user

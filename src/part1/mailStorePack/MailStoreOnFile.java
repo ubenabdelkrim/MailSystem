@@ -47,7 +47,6 @@ public class MailStoreOnFile extends MailStore implements Serializable, MailStor
 	 * Method to update MailStore of the user.
 	 * Invokes the readFile method
 	 * @param username Username
-	 * @return messagesList Messages List updated
 	 */
 	@Override
 	public void updateMail(String username) {
@@ -69,7 +68,7 @@ public class MailStoreOnFile extends MailStore implements Serializable, MailStor
 	 * @return messagesList Messages List updated
 	 */
 	public List<String> readFile(){
-		List<String> messagesList=new ArrayList<String>();
+		List<String> messagesList=new ArrayList<>();
 		try {
 			Scanner reader = new Scanner(file);
 			while(reader.hasNextLine()) {
@@ -90,7 +89,7 @@ public class MailStoreOnFile extends MailStore implements Serializable, MailStor
 	@SuppressWarnings("resource")
 	public static List<Message> parseData(List<String> messageList) {
 		Message message;
-		List<Message> parseredMessages=new ArrayList<Message>();
+		List<Message> parseredMessages=new ArrayList<>();
 		
 		for(String line : messageList) {
 			message=parseMessage(line);

@@ -2,6 +2,8 @@ package scala
 
 import part1.mailServiceElements.Message
 
+import scala.annotation.tailrec
+
 /**
  * Censor object
  */
@@ -34,7 +36,8 @@ object Censor {
      * @param finalList censored list
      * @return finalList
      */
-    def tail_censor_aux(wordsToCens: List[String])(messages: List[Message])(finalList:List[Message]):  List[Message] = messages match {
+    @tailrec
+  def tail_censor_aux(wordsToCens: List[String])(messages: List[Message])(finalList:List[Message]):  List[Message] = messages match {
       case Nil => finalList
       case msg::msgList=>
         tail_censor_aux(wordsToCens)(msgList)(splitMessage(wordsToCens, msg)::finalList)
@@ -45,7 +48,7 @@ object Censor {
   /**
    * Method to split messages and censor bodies
    * @param wordsToCens Words to censor
-   * @param messages Messages to censor
+   * @param message Messages to censor
    * @return censored message
    */
   def splitMessage(wordsToCens: List[String], message: Message):Message = {

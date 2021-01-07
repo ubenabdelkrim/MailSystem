@@ -3,4 +3,12 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ScaladocSettings">
+    <option name="outputDir" value="C:\Users\piedr\OneDrive\antes\Documentos\Estudis Universitaris\Tercer Curs\TAP\Practiques\MailSystem\src\scala" />
+    <option name="additionalFlags" value="" />
+    <option name="maxHeapSize" value="" />
+    <option name="docTitle" value="MailSystem documentation" />
+    <option name="verbose" value="false" />
+    <option name="openInBrowser" value="false" />
+  </component>
 </project>

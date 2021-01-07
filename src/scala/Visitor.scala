@@ -2,6 +2,8 @@ package scala
 
 import part1.mailServiceElements.Message
 
+import scala.collection.mutable
+
 /**
  * Tratit Visitor
  * 2 methods to implement, one for each Component
@@ -24,7 +26,7 @@ trait Visitor {
  * FilterVisitor Class extends Visitor
  * @param p p Operation, receives Message and return Boolean
  */
-class FilterVisitor(p:(Message) => Boolean) extends Visitor {
+class FilterVisitor(p: Message => Boolean) extends Visitor {
   var messages: List[Message] = List()
 
   /**
@@ -32,7 +34,7 @@ class FilterVisitor(p:(Message) => Boolean) extends Visitor {
    * @param account Account to visit
    */
   override def visit(account: Account): Unit = {
-    val mail = account.getMail()
+    val mail = account.getMail
     if(mail!=null) {
       messages = messages ++ mail.filter(p)
     } //concatenation
@@ -74,17 +76,17 @@ class CounterVisitor() extends Visitor{
 /**
  * FoldFilterVisitor class extends Visitor
  * if account pass the test, apply foldleft operation to each message for mail
- * @param accumulator
- * @param op
- * @param p
- * @tparam A
+ * @param accumulator Accumulator
+ * @param op Operation
+ * @param p Test
+ * @tparam A Generic Type
  */
-class FoldFilterVisitor[A](accumulator:A, op: (A,Message)=>A, p:(Account) => Boolean) extends Visitor {
-  var users = scala.collection.mutable.Map[String, A]()
+class FoldFilterVisitor[A](accumulator:A, op: (A,Message)=>A, p: Account => Boolean) extends Visitor {
+  var users: mutable.Map[String, A] = scala.collection.mutable.Map[String, A]()
 
   override def visit(account: Account): Unit = {
     if (p(account)) {
-      val mail=account.getMail()
+      val mail=account.getMail
         if(mail!=null){
           mail.groupBy(_.getSender.getUsername)
             .foreach(elem=>{
@@ -115,7 +117,7 @@ class TransformerVisitor(op:List[Message] => List[Message]) extends Visitor{
    * @param account Account to visit
    */
   override def visit(account: Account): Unit = {
-    val list=account.getMail()
+    val list=account.getMail
     if(list!=null){
       messagesList=messagesList++op(list)
     }

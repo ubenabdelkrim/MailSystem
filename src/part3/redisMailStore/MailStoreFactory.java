@@ -47,9 +47,7 @@ public class MailStoreFactory {
                     return new ReversesStringDecorator(new EncryptionDecorator(new MailStoreOnFile()));
                 }
                 return (MailStoreInterface) Class.forName(mailstore).getConstructor().newInstance();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
+            } catch (InvocationTargetException | NoSuchMethodException e) {
                 e.printStackTrace();
             }
         } catch (IllegalAccessException | InstantiationException | ClassNotFoundException e) {

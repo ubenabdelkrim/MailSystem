@@ -15,7 +15,7 @@ public class MailStoreFactDemo {
         User user1=new User("Usama", "usi", 2000);
         User user2=new User("Adel", "adl", 1983);
 
-        //WrappedMailStore
+        System.out.println("WrappedMailStore");//WrappedMailStore
         mailService=new MailServiceFactory(new MailStoreFactory(EncryptionDecorator.class.getName()));
         mailService.addNewMailBox(new MailBoxWithSpam(user1));
         mailService.addNewMailBox(new MailBoxWithSpam(user2));
@@ -24,7 +24,7 @@ public class MailStoreFactDemo {
         mailService.searchMailBoxUser(user1.getUsername()).sendMail(new Message("TAP", "Hello World!", user2));
         mailService.searchMailBoxUser(user1.getUsername()).updateMailStore(user1.getUsername());
         System.out.print(mailService.searchMailBoxUser(user1.getUsername()).getMailstore().getMessagesList());
-        //MailStoreInMemory
+        System.out.println("MailStoreInMemory");//MailStoreInMemory
         mailService=new MailServiceFactory(new MailStoreFactory(MailStoreInMemory.class.getName()));
         mailService.createMailStore();
         mailService.addNewMailBox(new MailBoxWithSpam(user1));
@@ -34,7 +34,7 @@ public class MailStoreFactDemo {
         mailService.searchMailBoxUser(user1.getUsername()).sendMail(new Message("AC", "Hola Mundo!", user2));
         mailService.searchMailBoxUser(user1.getUsername()).updateMailStore(user1.getUsername());
         System.out.print(mailService.searchMailBoxUser(user1.getUsername()).getMailstore().getMessagesList());
-        //MailStoreOnFile
+        System.out.println("MailStoreOnFile");//MailStoreOnFile
         mailService=new MailServiceFactory(new MailStoreFactory(MailStoreOnFile.class.getName()));
         mailService.createMailStore();
         mailService.addNewMailBox(new MailBoxWithSpam(user1));
