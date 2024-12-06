@@ -1,7 +1,7 @@
 # Project Report: Email System
 
 ## Overview:
-This project is the implementation of an email system as part of an advanced programming techniques course. The system is designed to manage user creation, sending and receiving messages, and organizing messages into different storage types (in-memory and file-based). Additionally, design patterns are applied to ensure the system is modular, extensible, and maintainable. 
+This project is the implementation of an email system as part of an advanced programming techniques course in the Bachelor's degree in Computer Engineering. The system is designed to manage user creation, sending and receiving messages, and organizing messages into different storage types (in-memory and file-based). Additionally, design patterns are applied to ensure the system is modular, extensible, and maintainable.
 
 ## Technologies Used:
 1. **Java**: The primary programming language used to implement the core logic of the email system. Java is chosen for its robustness, scalability, and extensive ecosystem.
